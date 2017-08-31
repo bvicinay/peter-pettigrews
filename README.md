@@ -1,2 +1,3 @@
 # pettigrews-peter
-Our team CS2340 group project repository.
+Our CS2340 group project repository.
+Belford, Mack, Robinson, Tinsley, Vicinay
