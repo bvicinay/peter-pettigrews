@@ -1,5 +1,7 @@
 package edu.gatech.oad.antlab.person;
 
+import java.util.NoSuchElementException;
+
 /**
  *  A simple class for person 5
  *  returns their name and a
@@ -30,8 +32,21 @@ public class Person5 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 5 put your implementation here
-	  return null;
+	  if (input == null) {
+	  	throw new NoSuchElementException("Can't edit null data");
+	  }
+	  else if (input.length() < 3) {
+	      return input;
+      } else {
+	      String temp = "";
+	      char a = input.charAt(0);
+	      char b = input.charAt(1);
+	      for (int i = 0; i < input.length() - 2; i++) {
+	          temp = temp + input.charAt(i + 2);
+          }
+          temp = temp + a + b;
+	      return temp;
+      }
 	}
 	
 	/**

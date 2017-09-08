@@ -1,5 +1,8 @@
 package edu.gatech.oad.antlab.person;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 /**
  *  A simple class for person 2
  *  returns their name and a
@@ -30,9 +33,35 @@ public class Person2 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 2 put your implementation here
-	  return null;
+
+        char[] arr = input.toCharArray();
+        ArrayList<Character> inputString = new ArrayList<Character>();
+        String str = "";
+
+        for (int i = 0; i < arr.length; i++) {
+            inputString.add(arr[i]);
+        }
+
+        str = getRandomStr(inputString, str);
+
+
+        return str;
+
 	}
+
+    private String getRandomStr(ArrayList<Character> inputString, String str) {
+
+        if (inputString.size() == 1) {
+            return str += inputString.remove(0);
+        }
+
+        Random rand = new Random();
+
+        str += inputString.remove(rand.nextInt(inputString.size()));
+
+        return getRandomStr(inputString, str);
+    }
+
 	/**
 	 * Return a string rep of this object
 	 * that varies with an input string
