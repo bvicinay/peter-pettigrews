@@ -43,6 +43,18 @@ public class Person3 {
 	 */
 	private String calc(String input) {
 	  //Person 3 put your implementation here
-	  return null;
+		char[] word = input.toCharArray();
+        int start = 0;
+        int finish = word.length-1;
+        while (finish > start) {
+            char switchToBack = word[start];
+            word[start] = word[finish];
+            word[finish] = switchToBack;
+            start++;
+            finish--;
+        }
+
+
+	  return new String(word);
 	}
 }
